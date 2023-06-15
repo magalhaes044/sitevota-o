@@ -4,52 +4,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
-  <title>Votação: Quem é o jogador mais bonito?</title>
+  <title>Jogo: Quem é o jogador mais bonito?</title>
 </head>
 
 <body>
   <header>
-    <h1>Votação: Quem é o jogador mais bonito?</h1>
+    <h1>Jogo: Quem é o jogador mais bonito?</h1>
   </header>
 
-  <main>
-    <div class="duel">
-      <h2 class="duel-title">Duelo</h2>
-      <div class="duel-images">
-        <img src="https://hdqwalls.com/download/neymar-jr-brazil-portraits-f1-3840x2400.jpg" alt="Neymar" class="duel-image" onclick="vote('neymar')">
-        <img src="https://th.bing.com/th/id/R.8bdfc9a6588b52996117a2d2a3219e95?rik=BVLPQYw%2febS%2b4g&pid=ImgRaw&r=0" alt="Messi" class="duel-image" onclick="vote('messi')">
-        <img src="https://th.bing.com/th/id/R.ea2b1b5815ae3aadfb9f5956afc28023?rik=j3wjEIX0dg2AnA&pid=ImgRaw&r=0" alt="Mbappé" class="duel-image" onclick="vote('mbappe')">
-        <img src="https://wallpapercave.com/wp/wp11318284.jpg" alt="Vinícius Junior" class="duel-image" onclick="vote('vinicius')">
-        <img src="https://images.wallpapersden.com/image/download/hd-erling-haaland-2022_bWppbmyUmZqaraWkpJRnamtlrWZpaWU.jpg" alt="Haaland" class="duel-image" onclick="vote('haaland')">
+  <main class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="duel">
+          <h2 class="duel-title">Duelo</h2>
+          <div class="duel-images">
+            <div class="player" onclick="vote(0)">
+              <img src="https://hdqwalls.com/download/neymar-jr-brazil-portraits-f1-3840x2400.jpg" alt="Neymar">
+              <span class="player-name">Neymar</span>
+            </div>
+            <div class="player" onclick="vote(1)">
+              <img src="https://th.bing.com/th/id/R.8bdfc9a6588b52996117a2d2a3219e95?rik=BVLPQYw%2febS%2b4g&pid=ImgRaw&r=0" alt="Messi">
+              <span class="player-name">Messi</span>
+            </div>
+          </div>
+          <div class="duel-result">
+            <h3 class="duel-result-text"></h3>
+            <button class="btn btn-primary" onclick="nextDuel()">Próximo Duelo</button>
+          </div>
+        </div>
       </div>
-      <div class="duel-buttons">
-        <button class="btn" onclick="generateNextDuel()">Próximo Duelo</button>
-      </div>
-    </div>
-
-    <div class="results">
-      <h2>Resultados</h2>
-      <div class="results-container">
-        <div id="neymar-score" class="result-item">
-          <img src="https://hdqwalls.com/download/neymar-jr-brazil-portraits-f1-3840x2400.jpg" alt="Neymar" class="result-image">
-          <p id="neymar-count">0</p>
-        </div>
-        <div id="messi-score" class="result-item">
-          <img src="https://th.bing.com/th/id/R.8bdfc9a6588b52996117a2d2a3219e95?rik=BVLPQYw%2febS%2b4g&pid=ImgRaw&r=0" alt="Messi" class="result-image">
-          <p id="messi-count">0</p>
-        </div>
-        <div id="mbappe-score" class="result-item">
-          <img src="https://th.bing.com/th/id/R.ea2b1b5815ae3aadfb9f5956afc28023?rik=j3wjEIX0dg2AnA&pid=ImgRaw&r=0" alt="Mbappé" class="result-image">
-          <p id="mbappe-count">0</p>
-        </div>
-        <div id="vinicius-score" class="result-item">
-          <img src="https://wallpapercave.com/wp/wp11318284.jpg" alt="Vinícius Junior" class="result-image">
-          <p id="vinicius-count">0</p>
-        </div>
-        <div id="haaland-score" class="result-item">
-          <img src="https://images.wallpapersden.com/image/download/hd-erling-haaland-2022_bWppbmyUmZqaraWkpJRnamtlrWZpaWU.jpg" alt="Haaland" class="result-image">
-          <p id="haaland-count">0</p>
+      <div class="col-md-6">
+        <div class="scoreboard">
+          <h2 class="scoreboard-title">Placar</h2>
+          <ul class="score-list">
+            <li class="score-item">
+              <span class="score-player">Neymar:</span>
+              <span id="score-neymar" class="score-value">0</span>
+            </li>
+            <li class="score-item">
+              <span class="score-player">Messi:</span>
+              <span id="score-messi" class="score-value">0</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
