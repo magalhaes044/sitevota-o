@@ -6,7 +6,7 @@ let player2 = null;
 let player1Score = 0;
 let player2Score = 0;
 
-function generateDuel() {
+function generateNextDuel() {
   if (players.length < 2) {
     alert('A votação foi concluída!');
     return;
@@ -22,20 +22,38 @@ function generateDuel() {
 
   const duelImages = document.querySelector('.duel-images');
   duelImages.innerHTML = `
-    <img src="link_web_${player1}.jpg" alt="${player1}" class="duel-image">
-    <h3 class="versus">VS</h3>
-    <img src="link_web_${player2}.jpg" alt="${player2}" class="duel-image">
+    <img src="link_web_${player1}.jpg" alt="${player1}" class="duel-image" onclick="vote('${player1}')">
+    <img src="link_web_${player2}.jpg" alt="${player2}" class="duel-image" onclick="vote('${player2}')">
   `;
 }
 
-function updateScore(winner) {
-  if (winner === player1) {
+function vote(player) {
+  if (player === player1) {
     player1Score++;
-    document.getElementById(`${player1}-count`).innerText = player1Score;
-  } else if (winner === player2) {
+  } else if (player === player2) {
     player2Score++;
-    document.getElementById(`${player2}-count`).innerText = player2Score;
   }
+
+  updateScores();
+  generateNextDuel();
 }
 
-generateDuel();
+function updateScores() {
+  const neymarCount = document.getElementById('neymar-count');
+  const messiCount = document.getElementById('messi-count');
+  const mbappeCount = document.getElementById('mbappe-count');
+  const viniciusCount = document.getElementById('vinicius-count');
+  const haalandCount = document.getElementById('haaland-count');
+
+  neymarCount.textContent = player1Score;
+  messiCount.textContent = player2Score;
+
+  // Atualize as contagens para os outros jogadores aqui
+
+  // Exemplo:
+  // mbappeCount.textContent = player3Score;
+  // viniciusCount.textContent = player4Score;
+  // haalandCount.textContent = player5Score;
+}
+
+generateNextDuel();
