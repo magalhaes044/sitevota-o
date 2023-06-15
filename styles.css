@@ -34,8 +34,9 @@
   
   .duel-images {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     margin-bottom: 20px;
   }
   
@@ -44,12 +45,13 @@
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
+    margin: 10px;
   }
   
   .duel-buttons {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
   }
   
   .btn {

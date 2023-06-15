@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Votação: Quem é mais bonito?</title>
+  <title>Votação: Quem é o jogador mais bonito?</title>
 </head>
 
 <body>
   <header>
-    <h1>Votação: Quem é mais bonito?</h1>
+    <h1>Votação: Quem é o jogador mais bonito?</h1>
   </header>
 
   <main>
@@ -20,15 +20,11 @@
         <img src="https://hdqwalls.com/download/neymar-jr-brazil-portraits-f1-3840x2400.jpg" alt="Neymar" class="duel-image" id="neymar">
         <img src="https://th.bing.com/th/id/R.8bdfc9a6588b52996117a2d2a3219e95?rik=BVLPQYw%2febS%2b4g&pid=ImgRaw&r=0" alt="Messi" class="duel-image" id="messi">
         <img src="https://th.bing.com/th/id/R.ea2b1b5815ae3aadfb9f5956afc28023?rik=j3wjEIX0dg2AnA&pid=ImgRaw&r=0" alt="Mbappé" class="duel-image" id="mbappe">
-        <img src="https://images.wallpapersden.com/image/download/erling-haaland-hd_bWlobWWUmZqaraWkpJRobWllrWdma2VnZWdmbm4.jpg" alt="Haaland" class="duel-image" id="haaland">
+        <img src="https://wallpapercave.com/wp/wp11318284.jpg" alt="Vinícius Junior" class="duel-image" id="vinicius">
+        <img src="https://images.wallpapersden.com/image/download/hd-erling-haaland-2022_bWppbmyUmZqaraWkpJRnamtlrWZpaWU.jpg" alt="Haaland" class="duel-image" id="haaland">
       </div>
       <div class="duel-buttons">
-        <button class="btn" onclick="vote('neymar', 'messi')">Neymar vs Messi</button>
-        <button class="btn" onclick="vote('mbappe', 'haaland')">Mbappé vs Haaland</button>
-        <button class="btn" onclick="vote('neymar', 'mbappe')">Neymar vs Mbappé</button>
-        <button class="btn" onclick="vote('messi', 'haaland')">Messi vs Haaland</button>
-        <button class="btn" onclick="vote('neymar', 'haaland')">Neymar vs Haaland</button>
-        <button class="btn" onclick="vote('messi', 'mbappe')">Messi vs Mbappé</button>
+        <button class="btn" onclick="generateDuel()">Próximo Duelo</button>
       </div>
     </div>
 
@@ -47,8 +43,12 @@
           <img src="https://th.bing.com/th/id/R.ea2b1b5815ae3aadfb9f5956afc28023?rik=j3wjEIX0dg2AnA&pid=ImgRaw&r=0" alt="Mbappé" class="result-image">
           <p id="mbappe-count">0</p>
         </div>
+        <div id="vinicius-score" class="result-item">
+          <img src="https://wallpapercave.com/wp/wp11318284.jpg" alt="Vinícius Junior" class="result-image">
+          <p id="vinicius-count">0</p>
+        </div>
         <div id="haaland-score" class="result-item">
-          <img src="https://images.wallpapersden.com/image/download/erling-haaland-hd_bWlobWWUmZqaraWkpJRobWllrWdma2VnZWdmbm4.jpg" alt="Haaland" class="result-image">
+          <img src="https://images.wallpapersden.com/image/download/hd-erling-haaland-2022_bWppbmyUmZqaraWkpJRnamtlrWZpaWU.jpg" alt="Haaland" class="result-image">
           <p id="haaland-count">0</p>
         </div>
       </div>
